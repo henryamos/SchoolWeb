@@ -1,11 +1,18 @@
 /* Toogle Menu */
+const hamburger = document.querySelector(".hamburger");
+const navMenu = document.querySelector(".nav-menu");
 
-let navLinks = document.getElementById("navLinks");
+hamburger.addEventListener("click", mobileMenu);
 
-function displayMenu(){
-    navLinks.style.right = "0";
+function mobileMenu() {
+    hamburger.classList.toggle("active");
+    navMenu.classList.toggle("active");
 }
+const navLink = document.querySelectorAll(".nav-link");
 
-function hideMenu(){
-    navLinks.style.right = "-200px";
+navLink.forEach(n => n.addEventListener("click", closeMenu));
+
+function closeMenu() {
+    hamburger.classList.remove("active");
+    navMenu.classList.remove("active");
 }
